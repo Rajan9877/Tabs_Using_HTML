@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500;800&family=Mukta:wght@300;500&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+    <title>Javascript Tabs</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Gabarito', sans-serif;
+            font-family: 'Mukta', sans-serif;
+            font-family: 'Rubik', sans-serif;
+        }
+        .container{
+            margin: 100px;
+            height: 65vh;
+            border-radius: 50px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+        .tabs{
+            padding: 20px;
+            height: 5vh;
+        }
+        .tabs ul{
+            display: flex;
+        }
+        .tabs ul li{
+            list-style: none;
+            margin-left: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 4px 10px;
+            border-radius: 50px;
+            
+        }
+        .content{
+            margin: 20px;
+            height: 40vh;
+        }
+        #paras1, #paras2, #paras3{
+            padding: 20px 30px;
+        }
+        #paras2, #paras3{
+            display: none;
+        }
+        .active{
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <ul>
+                <li class="active" id="first">First</li>
+                <li id="second">Second</li>
+                <li id="third">Third</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div id="paras1">
+                <h3>First Tab</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur adipisci provident asperiores accusantium hic voluptatum nisi commodi, nulla sit optio, voluptatibus tempore quis voluptate placeat minima saepe quas quae laudantium eaque dolorum. Fugit debitis doloribus similique consequuntur architecto placeat dolor ipsam eaque ratione! Voluptas officia commodi ex sunt porro qui, rem quaerat culpa voluptatibus possimus odio repellendus reiciendis amet saepe fugit excepturi soluta aliquam magni libero ratione animi, ipsum itaque aperiam! Voluptates nam sit vel, labore, impedit nihil cumque voluptate quia eum dignissimos corrupti, nulla voluptatibus non ipsa at dolore pariatur eligendi. Commodi iste mollitia cumque cum sint doloremque quod.</p>
+            </div>
+            <div id="paras2">
+                <h3>Second Tab</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam placeat dolorum dolores omnis repellat itaque in earum, non ipsam eveniet nam facilis, voluptatum temporibus. Totam quia aspernatur, architecto cumque amet minima necessitatibus ullam placeat exercitationem rerum, pariatur repudiandae possimus, repellendus earum sunt! Sunt molestiae at inventore quidem a officia doloribus repellendus, labore et dignissimos velit optio obcaecati magnam possimus nostrum quos eius harum aut iste quo aspernatur omnis! Exercitationem tempora omnis aut iusto, accusantium sapiente alias natus. Voluptatibus voluptatum itaque cumque. Ipsum possimus quaerat, dolorem fugit ab nostrum magni voluptate. Exercitationem et maiores natus impedit. Quam doloribus aspernatur mollitia omnis.</p>
+            </div>
+            <div id="paras3">
+                <h3>Third Tab</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, quas culpa velit quidem assumenda aut amet sequi, architecto, impedit sit veritatis excepturi error! Et ad at non corrupti qui fuga possimus doloribus suscipit veritatis cupiditate ipsam fugiat quis voluptatem aperiam, debitis rerum rem accusantium porro molestiae autem, ipsum unde. Officiis enim praesentium facere. Inventore error voluptatibus itaque aut, minima, deleniti quasi ea, hic id reprehenderit exercitationem? Unde omnis accusantium sed, aut sunt voluptatum illo nesciunt qui reiciendis soluta commodi odio optio sequi dolorum recusandae, sint eius facere magni delectus harum alias quis nobis. Possimus fugiat a sed eos, aspernatur numquam.</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        var firstTab = document.getElementById('first');
+        var secondTab = document.getElementById('second');
+        var thirdTab = document.getElementById('third');
+        firstTab.addEventListener('click', ()=>{
+            $('#first').addClass('active');
+            $('#second').removeClass('active');
+            $('#third').removeClass('active');
+            $('#paras2').hide();
+            $('#paras3').hide();
+            $('#paras1').fadeIn();
+        });
+        secondTab.addEventListener('click', ()=>{
+            $('#second').addClass('active');
+            $('#first').removeClass('active');
+            $('#third').removeClass('active');
+            $('#paras1').hide();
+            $('#paras3').hide();
+            $('#paras2').fadeIn();
+        });
+        thirdTab.addEventListener('click', ()=>{
+            $('#third').addClass('active');
+            $('#first').removeClass('active');
+            $('#second').removeClass('active');
+            $('#paras1').hide();
+            $('#paras2').hide();
+            $('#paras3').fadeIn();
+        });
+    </script>
+</body>
+</html>
